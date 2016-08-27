@@ -243,6 +243,55 @@ var WindowManager = (function () {
     };
 
     /**
+     * Sets the font to BIGFONT or SMALLFONT.
+     *
+     * All parameters are required. If the window does not exist, or if any of
+     * the parameters are not valid, then this function returns false.
+     *
+     * @param {String} font  Either BIGFONT or SMALLFONT
+     * @param {String} name The name of the window
+     * @return {Boolean} Returns true on success.
+     */
+    this.setFontSize = function setFontSize (name, font) {
+
+      // Check for name.
+      if (name == undefined) {
+        console.error("WindowManager.setFontSize: name must be given");
+        return false;
+      }
+
+      if (typeof name != 'string' && !(name instanceof String)) {
+        console.error("WindowManager.setFontSize: name must be a string");
+        return false;
+      }
+
+      // Check for font.
+      if (font == undefined) {
+        console.error("WindowManager.setFontSize: font must be given");
+        return false;
+      }
+
+      if (typeof font != 'string' && !(font instanceof String)) {
+        console.error("WindowManager.setFontSize: font must be a string");
+        return false;
+      }
+
+      if (!privates.windows[name]) {
+        console.error("WindowManager.setFontSize: Window does not exist");
+        return false;
+      }
+
+      font = font.trim();
+      // Fetch the window structure and set the font to x-large if BIGFONT is included.
+      var win_struct = privates.windows[name].struct;
+      if(font === "BIGFONT"){
+        $(win_struct).find('pre')[0].style.fontSize = "large";
+      }
+
+      return true;
+    };
+
+    /**
      * Moves a window specified by name to the specified position.
      *
      * All parameters are required. If the window does not exist, or if any of

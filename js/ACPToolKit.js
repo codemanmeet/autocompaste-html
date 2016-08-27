@@ -81,10 +81,12 @@ var ACPToolKit = (function () {
 
             var data_file = options.data_file;
             var stimuli = options.stimuli;
+            var fontSize = options.fontSize;
 
             $('.js-expt-technique').text(options.technique);
             $('.js-expt-granularity').text(options.granularity);
             $('.js-expt-stimuli').text(options.stimuli);
+            $('.js-expt-fontSize').text(options.fontSize);
 
             // Clean up DOM
             wm.destroyAllWindows();
@@ -111,6 +113,9 @@ var ACPToolKit = (function () {
                 var lines_to_highlight = stimuli.split("\n\n");
 
                 var windows = wm.getWindowList();
+                for (var i = 0; i < windows.length; i++) {
+                  wm.setFontSize(windows[i], fontSize);
+                }
                 for (var i = 0; i < windows.length; i++) {
                     if (windows[i] == 'text_editor') {
                         continue;
