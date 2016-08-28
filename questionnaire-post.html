@@ -35,62 +35,81 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h1>Post-Experiment Questionnaire</h1>
                     <hr>
-                    <p>This part of the interface collects whatever post-experiment information. After the experiment, you want to collect more qualitative and quantitative feedback about the tested techniques. Some of the typical questions include, personal preferences, any difficulties participants experienced in the experiment, and areas of improvement. Please design a basic post-experimental questionnaire (no more than 10 questions).</p>
-
                     <p>Current participant: <span class="js-pid pid"></span></p>
 
                     <form id="post-expt-form">
-                        <div class="form-group">
-                            <label for="q1">Question 1 - Text</label>
-                            <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter answer">
-                        </div>
-                        <div class="form-group">
-                            <label for="q2">Question 2 - Radio</label>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios1" value="radio1">
-                                Radio response 1
-                              </label>
-                            </div>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios2" value="radio2">
-                                Radio response 2
-                              </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="q3">Question 3 - Checkbox</label>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox1">
-                                Checkbox response 1
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox2">
-                                Checkbox response 2
-                              </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="q4">Question 4 - Select Options</label>
-                            <select class="form-control" name="q4">
-                                <option value="option1">Option response 1</option>
-                                <option value="option2">Option response 2</option>
-                                <option value="option3">Option response 3</option>
-                                <option value="option4">Option response 4</option>
-                                <option value="option1">Option response 5</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="q5">Question 5 - Textarea</label>
-                            <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                    </form>
-                </div>
+
+          <div class="form-group">
+            <label for="q1">Q 1 - On a scale of 1 to 5, with 4 being extremely satisfied and 1 being extremely not satisfied, how pleased were you copying text using the <b>AutoComPaste</b> technique? <span style="color:red;">*</span></label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="q1" value="5"> 5 Extremely pleased
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="q1" value="4"> 4
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q1" value="3"> 3
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q1" value="2"> 2
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q1" value="1"> 1 Not pleased at all
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="q2">Q 2 - On a scale of 1 to 5, with 5 being extremely pleased and 1 being not pleased at all, how pleased were you copying text using the <b>Traditional copy-paste</b> technique? <span style="color:red;">*</span></label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="q2" value="5"> 5 Extremely pleased
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="q2" value="4"> 4
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q2" value="3"> 3
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q2" value="2"> 2
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q2" value="1"> 1 Not pleased at all
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="q3">Q 3 - What did you like/dislike about AutoComPaste? <span style="color:red;">*</span></label>
+            <br>
+            <textarea class="form-control" id="q3" name="q3" placeholder="Type your response here!"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
             </div>
         </div>
 
@@ -103,6 +122,21 @@
         <script>
             $(function () {
                 $('#post-expt-form').submit(function (event) {
+                  var q1count = $("input[name='q1']:checked").length;
+                  var q2count = $("input[name='q2']:checked").length;
+                  var q3 = document.getElementById("q3").value;
+                  if(q3 == undefined){
+                    alert('Please fill in all the required fields.');
+                    return false;
+                  }
+                  if(q3.trim() === ""){
+                    alert('Please fill in all the required fields.');
+                    return false;
+                  }
+                  if (q1count==0 || q2count==0) {
+                    alert('Please fill in all the required fields.');
+                    return false;
+                  }
                     event.preventDefault();
                     var formResponses = $(this).serializeArray();
                     // Do your own form validation here.
