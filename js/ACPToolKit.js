@@ -114,9 +114,6 @@ var ACPToolKit = (function () {
 
                 var windows = wm.getWindowList();
                 for (var i = 0; i < windows.length; i++) {
-                  wm.setFontSize(windows[i], fontSize);
-                }
-                for (var i = 0; i < windows.length; i++) {
                     if (windows[i] == 'text_editor') {
                         continue;
                     }
@@ -129,6 +126,9 @@ var ACPToolKit = (function () {
                     });
 
                   $(win).find('pre').empty().append(content);
+                }
+                for (var i = 0; i < windows.length; i++) {
+                  wm.setFontSize(windows[i], fontSize);
                 }
             });
         }
