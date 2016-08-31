@@ -23,27 +23,6 @@
         },
         {
             "technique": "AUTOCOMPASTE",
-            "granularity": "phrase",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "number of positive charges"
-        },
-        {
-            "technique": "AUTOCOMPASTE",
-            "granularity": "phrase",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "reduce the amplitude"
-        },
-        {
-            "technique": "AUTOCOMPASTE",
-            "granularity": "phrase",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "single winding transformer"
-        },
-        {
-            "technique": "AUTOCOMPASTE",
             "granularity": "sentence",
             "fontSize": "SMALLFONT",
             "data_file": "data/texts.json",
@@ -60,27 +39,6 @@
             "technique": "AUTOCOMPASTE",
             "granularity": "sentence",
             "fontSize": "SMALLFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "What is average value?"
-        },
-        {
-            "technique": "AUTOCOMPASTE",
-            "granularity": "sentence",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "What is acceptor atoms?"
-        },
-        {
-            "technique": "AUTOCOMPASTE",
-            "granularity": "sentence",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "What is AC generator?"
-        },
-        {
-            "technique": "AUTOCOMPASTE",
-            "granularity": "sentence",
-            "fontSize": "BIGFONT",
             "data_file": "data/texts.json",
             "stimuli": "What is average value?"
         },
@@ -107,6 +65,48 @@
         },
         {
             "technique": "AUTOCOMPASTE",
+            "granularity": "phrase",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "number of positive charges"
+        },
+        {
+            "technique": "AUTOCOMPASTE",
+            "granularity": "phrase",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "reduce the amplitude"
+        },
+        {
+            "technique": "AUTOCOMPASTE",
+            "granularity": "phrase",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "single winding transformer"
+        },
+        {
+            "technique": "AUTOCOMPASTE",
+            "granularity": "sentence",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "What is acceptor atoms?"
+        },
+        {
+            "technique": "AUTOCOMPASTE",
+            "granularity": "sentence",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "What is AC generator?"
+        },
+        {
+            "technique": "AUTOCOMPASTE",
+            "granularity": "sentence",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "What is average value?"
+        },
+        {
+            "technique": "AUTOCOMPASTE",
             "granularity": "paragraph",
             "fontSize": "BIGFONT",
             "data_file": "data/texts.json",
@@ -149,27 +149,6 @@
         },
         {
             "technique": "TRADITIONAL",
-            "granularity": "phrase",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "number of positive charges"
-        },
-        {
-            "technique": "TRADITIONAL",
-            "granularity": "phrase",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "reduce the amplitude"
-        },
-        {
-            "technique": "TRADITIONAL",
-            "granularity": "phrase",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "single winding transformer"
-        },
-        {
-            "technique": "TRADITIONAL",
             "granularity": "sentence",
             "fontSize": "SMALLFONT",
             "data_file": "data/texts.json",
@@ -186,27 +165,6 @@
             "technique": "TRADITIONAL",
             "granularity": "sentence",
             "fontSize": "SMALLFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "What is average value?"
-        },
-        {
-            "technique": "TRADITIONAL",
-            "granularity": "sentence",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "What is acceptor atoms?"
-        },
-        {
-            "technique": "TRADITIONAL",
-            "granularity": "sentence",
-            "fontSize": "BIGFONT",
-            "data_file": "data/texts.json",
-            "stimuli": "What is AC generator?"
-        },
-        {
-            "technique": "TRADITIONAL",
-            "granularity": "sentence",
-            "fontSize": "BIGFONT",
             "data_file": "data/texts.json",
             "stimuli": "What is average value?"
         },
@@ -230,6 +188,48 @@
             "fontSize": "SMALLFONT",
             "data_file": "data/texts.json",
             "stimuli": "What is active component? A component that changes the amplitude of a signal between input and output."
+        },
+        {
+            "technique": "TRADITIONAL",
+            "granularity": "phrase",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "number of positive charges"
+        },
+        {
+            "technique": "TRADITIONAL",
+            "granularity": "phrase",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "reduce the amplitude"
+        },
+        {
+            "technique": "TRADITIONAL",
+            "granularity": "phrase",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "single winding transformer"
+        },
+        {
+            "technique": "TRADITIONAL",
+            "granularity": "sentence",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "What is acceptor atoms?"
+        },
+        {
+            "technique": "TRADITIONAL",
+            "granularity": "sentence",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "What is AC generator?"
+        },
+        {
+            "technique": "TRADITIONAL",
+            "granularity": "sentence",
+            "fontSize": "BIGFONT",
+            "data_file": "data/texts.json",
+            "stimuli": "What is average value?"
         },
         {
             "technique": "TRADITIONAL",
