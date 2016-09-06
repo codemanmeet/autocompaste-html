@@ -83,7 +83,7 @@
             var totalNumberOfTrials;
             var headers = ['Participant id', 'Technique', 'Granularity', 'Font Size',
                             'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
-                            'Trial End Time', 'Trial Time', 'Accuracy'];
+                            'Trial End Time', 'Trial Time', 'Accuracy', "Learning Index"];
             var trialData = [];
             var pid;
 
@@ -99,12 +99,13 @@
                     var trialStartTime = trialResult.start_time;
                     var trialEndTime = trialResult.end_time;
                     var trialDuration = trialResult.duration;
+                    var learningIndex = Math.log2(currentTrial + 1)/Math.log2(trialDuration);
                     var fontSize = trialResult.fontSize;
                     var accuracy = stimuli === userResponse ? 1 : 0;
 
                     var row = [pid, technique, granularity, fontSize, trialNum,
                                 stimuli, userResponse, trialStartTime,
-                                trialEndTime, trialDuration, accuracy];
+                                trialEndTime, trialDuration, accuracy, learningIndex];
                     trialData.push(row);
                 }
 
