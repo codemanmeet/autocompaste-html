@@ -57,7 +57,17 @@
                     </table>
                     <p>Please copy-paste the following <span class="js-expt-granularity">phrase</span> using the <span class="js-expt-technique">AUTOCOMPASTE</span> technique from one of the open windows.</p>
                     <div id="stimuli" class="alert alert-danger js-expt-stimuli">This is a long stimuli!</div>
-                    <button class="btn btn-primary btn-lg" onclick="next()">Next Task</button>
+                    <button class="btn btn-primary btn-lg nextTask" onclick="next()">Next Task</button>
+                    <div class="breakPoint">
+                      <div>
+                        <b>Take a short break of 2 minutes! You worked for it :)</b><br>
+                      </div>
+                      <b>
+                      <div class="time-text">
+                      </div>
+                      </b>
+                      <br>
+                    </div>
                 </div>
                 <div id="autocompaste" class="col-sm-9">
                     <div id="autocompaste-display"></div>
@@ -110,6 +120,9 @@
                 }
 
                 if (currentTrial < totalNumberOfTrials) {
+                  if (currentTrial == 17) {
+                    breakScreen.begin();
+                  }
                     ACPToolKit.presentTrial(trialsData[currentTrial]);
                     currentTrial += 1;
                     $('.js-expt-current-trial').text(currentTrial);
@@ -119,6 +132,46 @@
                     window.location = 'questionnaire-post.html';
                 }
             }
+  var breakScreen = (function() {
+    $('.breakPoint').hide();
+    $('.nextTask').show();
+    var isOnBreak = false;
+    var EventTimeSetter;
+    var end = function() {
+      if (!isOnBreak) return;
+      isOnBreak = false;
+      if (EventTimeSetter) clearInterval(EventTimeSetter);
+      $('.breakPoint').hide();
+      $('.nextTask').show();
+    };
+    var begin = function() {
+      var startTime = new Date().getTime();
+      if (isOnBreak) return;
+      isOnBreak = true;
+      $('.breakPoint').show();
+      $('.nextTask').hide();
+
+      EventTimeSetter = setInterval(function() {
+        var nowTime = new Date().getTime() - startTime;
+        var min = Math.floor( Math.round((120000 - nowTime) / 1000)/60);
+        var secs = Math.round((120000 - nowTime) / 1000) - (min*60);
+        $('.time-text').text(min + " minutes & " + secs + " seconds remaining!");
+        if (nowTime > 120000) {
+          isOnBreak = false;
+          $('.breakPoint').hide();
+          $('.nextTask').show();
+          clearInterval(EventTimeSetter);
+        }
+      }, 1000);
+    };
+
+    return {
+      isOnBreak: isOnBreak,
+      begin: begin,
+      end:end
+    };
+  })();
+
 
             var converter = (function(){
               var newUserMap = function(array, newIndices){
@@ -134,6 +187,7 @@
             })();
 
             $(document).ready(function () {
+              breakScreen.end();
                 $.get('data/experiments.json', function (data) {
                   var personID = ACPToolKit.getCurrentParticipantId()
                   switch(personID){
