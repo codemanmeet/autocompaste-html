@@ -40,7 +40,7 @@
                     <form id="post-expt-form">
 
           <div class="form-group">
-            <label for="q1">Q 1 - On a scale of 1 to 5, with 4 being extremely satisfied and 1 being extremely not satisfied, how pleased were you copying text using the <b>AutoComPaste</b> technique? <span style="color:red;">*</span></label>
+            <label for="q1">Q 1 - On a scale of 1 to 5, with 4 being extremely satisfied and 1 being extremely not satisfied, how pleased were you copying text using the <i>AutoComPaste</i> technique? <span style="color:red;">*</span></label>
             <div class="radio">
               <label>
                 <input type="radio" name="q1" value="5"> 5 Extremely pleased
@@ -72,7 +72,7 @@
           </div>
 
           <div class="form-group">
-            <label for="q2">Q 2 - On a scale of 1 to 5, with 5 being extremely pleased and 1 being not pleased at all, how pleased were you copying text using the <b>Traditional copy-paste</b> technique? <span style="color:red;">*</span></label>
+            <label for="q2">Q 2 - On a scale of 1 to 5, with 5 being extremely pleased and 1 being not pleased at all, how pleased were you copying text using the <i>Traditional copy-paste</i> technique? <span style="color:red;">*</span></label>
             <div class="radio">
               <label>
                 <input type="radio" name="q2" value="5"> 5 Extremely pleased
@@ -104,14 +104,78 @@
           </div>
 
           <div class="form-group">
-            <label for="q3">Q 3 - What did you like/dislike about AutoComPaste? <span style="color:red;">*</span></label>
+            <label for="q3">Q 3 - On a scale of 1 to 5, how likely will you use <i>AutoComplete</i> over <i>Traditional Copy paste</i>? <span style="color:red;">*</span></label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="q3" value="5"> 5 Extremely likely
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="q3" value="4"> 4
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q3" value="3"> 3
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q3" value="2"> 2
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q3" value="1"> 1 Not at all
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="q4">Q 4 - On a scale of 1 to 5, how likely will you continue using <i>Traditional Copy-paste</i> over <i>AutoCompaste</i>? <span style="color:red;">*</span></label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="q4" value="5"> 5 Extremely likely
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="q4" value="4"> 4
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q4" value="3"> 3
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q4" value="2"> 2
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="q4" value="1"> 1 Not at all
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="q5">Q 5 - What did you like/dislike about AutoComPaste? <span style="color:red;">*</span></label>
             <br>
-            <textarea class="form-control" id="q3" name="q3" placeholder="Type your response here!"></textarea>
+            <textarea class="form-control" id="q5" name="q5" placeholder="Type your response here!"></textarea>
           </div>
           <div class="form-group">
-            <label for="q4">Q 4 - Please let me know your overall feedback on the experiment. Would help us a long way to improve it further for our participants! :)</label>
+            <label for="q6">Q 6 - Please let me know your overall feedback on the experiment. Would help us a long way to improve it further for our participants! :)</label>
             <br>
-            <textarea class="form-control" id="q4" name="q4" placeholder="Type your feedback here!"></textarea>
+            <textarea class="form-control" id="q6" name="q6" placeholder="Type your feedback here!"></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
@@ -129,16 +193,18 @@
                 $('#post-expt-form').submit(function (event) {
                   var q1count = $("input[name='q1']:checked").length;
                   var q2count = $("input[name='q2']:checked").length;
-                  var q3 = document.getElementById("q3").value;
-                  if(q3 == undefined){
+                  var q3count = $("input[name='q3']:checked").length;
+                  var q4count = $("input[name='q4']:checked").length;
+                  var q5 = document.getElementById("q5").value;
+                  if(q5 == undefined){
                     alert('Please fill in all the required fields.');
                     return false;
                   }
-                  if(q3.trim() === ""){
+                  if(q5.trim() === ""){
                     alert('Please fill in all the required fields.');
                     return false;
                   }
-                  if (q1count==0 || q2count==0) {
+                  if (q1count==0 || q2count==0 || q3count==0 || q4count==0) {
                     alert('Please fill in all the required fields.');
                     return false;
                   }

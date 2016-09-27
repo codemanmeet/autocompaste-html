@@ -39,12 +39,12 @@
 
                     <form id="pre-expt-form">
                       <div class="form-group">
-                        <label for="q1">Q 1 - Name</label> <span style="color:red;">*</span>
+                        <label for="q1">Q 1 - Name</label><span style="color:red;"> * </span>
                           <input type="text" class="form-control" id="q1" name="q1" placeholder="Please enter your name">
                       </div>
 
                       <div class="form-group">
-                        <label for="q2">Q 2 - Gender</label> <span style="color:red;">*</span>
+                        <label for="q2">Q 2 - Gender</label><span style="color:red;"> * </span>
                         <div class="radio">
                           <label>
                             <input type="radio" name="q2" id="male" value="M"> Male
@@ -63,80 +63,105 @@
                       </div>
 
                       <div class="form-group" >
-                        <label for="q3">Q 3 - Age</label><span style="color:red;">*</span>
+                        <label for="q3">Q 3 - Age</label><span style="color:red;"> * </span>
                         <input type="text" class="form-control" id="q3" name="q3" placeholder="Please enter your age!">
                       </div>
 
                       <div class="form-group">
-                        <label for="q4">Q 4 - Nationality</label>
+                        <label for="q4">Q 4 - Nationality</label><span style="color:red;"> * </span>
                           <input type="text" class="form-control" id="q4" name="q4" placeholder="Please enter your nationality (E.g. Singaporean)">
                       </div>
 
                       <div class="form-group">
-                        <label for="q5">Q 5 - On a scale of 1 to 5, how pleased are you with the current conventional copy-paste technique of (Ctrl C-Ctrl V)?<span style="color:red;"> * </span></label>
+                        <label for="q5">Q 5 - Faculty</label><span style="color:red;"> * </span>
+                          <input type="text" class="form-control" id="q5" name="q5" placeholder="Please enter your faculty!">
+                      </div>
+                      <div class="form-group">
+                        <label for="q6">Q 6 - Major</label><span style="color:red;"> * </span>
+                          <input type="text" class="form-control" id="q6" name="q6" placeholder="Please enter your major!">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="q7">Q 7 - On a scale of 1 to 5, how pleased are you with the current conventional copy-paste technique of <i>(Ctrl C-Ctrl V)</i>?<span style="color:red;"> * </span></label>
                         <div class="radio">
                           <label>
-                            <input type="radio" name="q5" value="5"> 5 Extremely pleased
+                            <input type="radio" name="q7" value="5"> 5 Extremely pleased
                           </label>
                         </div>
                         <div class="radio">
                           <label>
-                            <input type="radio" name="q5" value="4"> 4
+                            <input type="radio" name="q7" value="4"> 4
                           </label>
                         </div>
 
                         <div class="radio">
                           <label>
-                            <input type="radio" name="q5" value="3"> 3
+                            <input type="radio" name="q7" value="3"> 3
                           </label>
                         </div>
 
                         <div class="radio">
                           <label>
-                            <input type="radio" name="q5" value="2"> 2
+                            <input type="radio" name="q7" value="2"> 2
                           </label>
                         </div>
 
                         <div class="radio">
                           <label>
-                            <input type="radio" name="q5" value="1"> 1 Not pleased at all
+                            <input type="radio" name="q7" value="1"> 1 Not pleased at all
                           </label>
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label for="q6">Q 6 - What issues do you have with the <b>Traditional copy-paste</b> method?<span style="color:red;">*</span></label>
-                        <div class="checkbox">
+                        <label for="q8">Q 8 - Which is the biggest issue you have with the <i>Traditional copy-paste</i> method?<span style="color:red;">*</span></label>
+                        <div class="radio">
                           <label>
-                            <input type="checkbox" name="q6" value="1">I find it cumbersome to select the text and press the (Ctrl-C Ctrl-V) buttons to copy over
+                            <input type="radio" name="q8" value="1">I find it cumbersome to select the text and press the (Ctrl-C Ctrl-V) buttons to copy over
                           </label>
                         </div>
-                        <div class="checkbox">
+                        <div class="radio">
                           <label>
-                            <input type="checkbox" name="q6" value="2"> Speed of copying over text is a big issue for me
-                          </label>
-                        </div>
-
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="q6" value="3"> Finding the text/navigating to text on a particular page is hard for me
+                            <input type="radio" name="q8" value="2"> Speed of copying over text is a big issue for me
                           </label>
                         </div>
 
-                        <div class="checkbox">
+                        <div class="radio">
                           <label>
-                            <input type="checkbox" name="q6" value="4"> I have other issues apart from the above ones.
+                            <input type="radio" name="q8" value="3"> Finding the text/navigating to text on a particular page is hard for me
                           </label>
                         </div>
 
-                        <div class="checkbox">
+                        <div class="radio">
                           <label>
-                            <input type="checkbox" name="q6" value="5"> I actually don't have any major issues with the conventional copy paste method
+                            <input type="radio" name="q8" value="4"> I have other issues apart from the above ones.
+                          </label>
+                        </div>
+
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="q8" value="5"> I actually don't have any major issues with the conventional copy paste method
                           </label>
                         </div>
                       </div>
+
                       <div class="form-group">
-                        <label for="q7">Please agree with the <a href="ManmeetSinghSaluja_A0105915J_A2_Statement_of_Consent.pdf">Consent Form</a>, before continuing. You can be assured that the data collected from the study will be kept private and will not be distributed in any manner apart from access by Prof. Shen of CS4249.
+                        <label for="q9">Have you used auto-compaste before?</label><span style="color:red;"> * </span>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="q9" value="1">Yes
+                          </label>
+                          </div>
+                          <div class="radio">
+                            <label>
+                              <input type="radio" name="q9" value="2">No
+                            </label>
+                            </div>
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="q10">Please agree with the <a href="ManmeetSinghSaluja_A0105915J_A2_Statement_of_Consent.pdf">Consent Form</a>, before continuing. You can be assured that the data collected from the study will be kept private and will not be distributed in any manner apart from access by Prof. Shen of CS4249.
                         </label>
                         <div class="radio">
                           <label>
@@ -164,11 +189,15 @@
                   var q1count = $("input[name='q1']").length;
                   var q2count = $("input[name='q2']:checked").length;
                   var q3count = $("input[name='q3']").length;
-                  var q5count = $("input[name='q5']:checked").length;
-                  var q6count = $("input[name='q6']:checked").length;
+                  var q4count = $("input[name='q4']").length;
+                  var q5count = $("input[name='q5']").length;
+                  var q6count = $("input[name='q6']").length;
+                  var q7count = $("input[name='q7']:checked").length;
+                  var q8count = $("input[name='q8']:checked").length;
+                  var q9count = $("input[name='q9']:checked").length;
 
                     event.preventDefault();
-                    if (q1count==0 || q2count==0 || q3count==0 || q5count==0 || q6count==0) {
+                    if (q1count==0 || q2count==0 || q3count==0 || q4count==0 || q5count==0 || q6count==0 || q7count==0 || q8count==0 || q9count==0) {
                       alert('Please fill in all the required fields.');
                       return false;
                     }
