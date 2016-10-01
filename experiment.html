@@ -91,6 +91,7 @@
             var trialsData;
             var currentTrial;
             var totalNumberOfTrials;
+            var windowLocationNumber = 1;
             var headers = ['Participant id', 'Technique', 'Granularity', 'Font Size',
                             'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
                             'Trial End Time', 'Trial Time', 'Accuracy', "Learning Index"];
@@ -106,13 +107,23 @@
                     var trialNum = currentTrial;
                     var stimuli = trialResult.stimuli;
                     var userResponse = trialResult.user_response;
-                    var trialStartTime = trialResult.start_time;
+                    var trialStartTime = 0;
+                    if(currentTrial == 19){
+                      trialStartTime = trialResult.start_time + 120000;
+                    } else{
+                      trialStartTime = trialResult.start_time;
+                    }
                     var trialEndTime = trialResult.end_time;
-                    var trialDuration = trialResult.duration;
+
+                    var trialDuration = 0;
+                    if(currentTrial == 19){
+                      trialDuration = trialResult.duration - 120000;
+                    } else{
+                      trialDuration = trialResult.duration;
+                    }
                     var learningIndex = Math.log2(currentTrial + 1)/Math.log2(trialDuration);
                     var fontSize = trialResult.fontSize;
                     var accuracy = stimuli === userResponse ? 1 : 0;
-
                     var row = [pid, technique, granularity, fontSize, trialNum,
                                 stimuli, userResponse, trialStartTime,
                                 trialEndTime, trialDuration, accuracy, learningIndex];
@@ -120,7 +131,7 @@
                 }
 
                 if (currentTrial < totalNumberOfTrials) {
-                  if (currentTrial == 17) {
+                  if (currentTrial == 18) {
                     breakScreen.begin();
                   }
                     ACPToolKit.presentTrial(trialsData[currentTrial]);
@@ -129,12 +140,18 @@
                 } else {
                     // Last trial completed
                     ACPToolKit.downloadTrialResults(trialData);
-                    window.location = 'questionnaire-post.html';
+                    if(windowLocationNumber <= 3){
+                      window.location = 'questionnaire-post.html';
+                    } else{
+                      window.location = 'experiment.html';
+                    }
+                    windowLocationNumber = windowLocationNumber + 1;
                 }
             }
   var breakScreen = (function() {
     $('.breakPoint').hide();
     $('.nextTask').show();
+    $('.js-expt-stimuli').show();
     var isOnBreak = false;
     var EventTimeSetter;
     var end = function() {
@@ -143,6 +160,7 @@
       if (EventTimeSetter) clearInterval(EventTimeSetter);
       $('.breakPoint').hide();
       $('.nextTask').show();
+      $('.js-expt-stimuli').show();
     };
     var begin = function() {
       var startTime = new Date().getTime();
@@ -150,6 +168,7 @@
       isOnBreak = true;
       $('.breakPoint').show();
       $('.nextTask').hide();
+      $('.js-expt-stimuli').hide();
 
       EventTimeSetter = setInterval(function() {
         var nowTime = new Date().getTime() - startTime;
@@ -160,6 +179,7 @@
           isOnBreak = false;
           $('.breakPoint').hide();
           $('.nextTask').show();
+          $('.js-expt-stimuli').show();
           clearInterval(EventTimeSetter);
         }
       }, 1000);
